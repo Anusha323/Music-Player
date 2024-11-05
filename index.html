@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image and Audio Player</title>
+</head>
+<body>
+
+  <!-- Image -->
+  <img id="image" src="https://images.unsplash.com/photo-1720631442759-6a6a95395f62?q=80&w=969&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image" width="500" height="300" style="transition: transform 5s ease-in-out;">
+
+  <!-- Audio -->
+  <audio id="audio" controls onplay="rotateImage()">
+    <source src="songs.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function rotateImage() {
+      var image = document.getElementById("image");
+      image.style.transform = "rotate(360deg)";
+    }
+
+    // Optional: rotate image continuously
+    var angle = 0;
+    setInterval(function() {
+      angle += 10;
+      document.getElementById("image").style.transform = "rotate(" + angle + "deg)";
+    }, 100);
+  </script>
+
+</body>
+</html>
